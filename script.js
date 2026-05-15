@@ -52,26 +52,124 @@ document.querySelectorAll('.company-card').forEach(card => {
     observer.observe(card);
 });
 
+// document.addEventListener('DOMContentLoaded', () => {
+//     const menuToggle = document.getElementById('mobile-menu');
+//     const navLinks = document.querySelector('.nav-links');
+//     const overlay = document.querySelector('.nav-overlay');
+
+//     if (menuToggle) {
+//         menuToggle.addEventListener('click', () => {
+//             console.log("Menu Clicked!"); // لو ظهرت الكلمة دي في الـ Inspect يبقى الكود شغال
+//             navLinks.classList.toggle('active');
+//             if (overlay) overlay.classList.toggle('active');
+            
+//             // تغيير الأيقونة
+//             const icon = menuToggle.querySelector('i');
+//             icon.classList.toggle('fa-bars');
+//             icon.classList.toggle('fa-times');
+//         });
+//     } else {
+//         console.error("لم يتم العثور على عنصر mobile-menu");
+//     }
+// });
+// document.addEventListener('DOMContentLoaded', () => {
+//     const menuToggle = document.getElementById('mobile-menu');
+//     const navLinks = document.querySelector('.nav-links');
+//     const overlay = document.querySelector('.nav-overlay');
+//     const dropdownToggle = document.querySelector('.dropdown-toggle');
+
+//     // فتح وإغلاق القائمة الرئيسية
+//     menuToggle.addEventListener('click', () => {
+//         navLinks.classList.toggle('active');
+//         overlay.classList.toggle('active');
+        
+//         // تغيير شكل الأيقونة وحركتها
+//         const icon = menuToggle.querySelector('i');
+//         if (navLinks.classList.contains('active')) {
+//             icon.classList.replace('fa-bars', 'fa-times');
+//             icon.style.color = "#fff"; // تغيير لون X للأبيض ليظهر على الخلفية الغامقة
+//         } else {
+//             icon.classList.replace('fa-times', 'fa-bars');
+//             icon.style.color = "var(--primary-color)";
+//         }
+//     });
+
+//     // التحكم في القائمة المنسدلة (Dropdown) في الموبايل
+//     dropdownToggle.addEventListener('click', function(e) {
+//         if (window.innerWidth <= 768) {
+//             e.preventDefault();
+//             this.parentElement.classList.toggle('open');
+//             // تدوير السهم عند الفتح
+//             const arrow = this.querySelector('i');
+//             arrow.style.transform = this.parentElement.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0)';
+//         }
+//     });
+// });
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     const overlay = document.querySelector('.nav-overlay');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const allLinks = document.querySelectorAll('.nav-links a');
 
+   
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
-            console.log("Menu Clicked!"); // لو ظهرت الكلمة دي في الـ Inspect يبقى الكود شغال
-            navLinks.classList.toggle('active');
-            if (overlay) overlay.classList.toggle('active');
-            
-            // تغيير الأيقونة
-            const icon = menuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+            toggleMenu();
         });
-    } else {
-        console.error("لم يتم العثور على عنصر mobile-menu");
+    }
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            closeMenu();
+        });
+    }
+
+    allLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768 && link.classList.contains('dropdown-toggle')) {
+                return; 
+            }
+            closeMenu(); 
+        });
+    });
+
+    
+    if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                parent.classList.toggle('open');
+            }
+        });
+    }
+    
+  
+    
+    function toggleMenu() {
+        navLinks.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('active');
+        updateIcon();
+    }
+
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        updateIcon();
+    }
+
+    function updateIcon() {
+        const icon = menuToggle.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     }
 });
+
 if (overlay) {
     overlay.addEventListener('click', () => {
         navLinks.classList.remove('active');
