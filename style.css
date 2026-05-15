@@ -486,11 +486,21 @@ header {
   margin-bottom: 12px;
 }
 
+.footer-column ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
 .footer-column p a {
   color: #ffffff !important;
   text-decoration: none;
   transition: 0.3s;
 }
+.footer-column ul li a:hover {
+  /* color: var(--secondary-color); */
+  padding-right: 10px;
+}
+
 .social-icons {
   display: flex;
   gap: 15px;
