@@ -1,3 +1,19 @@
+document.querySelectorAll(".phone-link").forEach(el => {
+    el.href = `tel:${siteConfig.contact.phone}`;
+});
+document.querySelectorAll(".whatsapp-link").forEach(el => {
+    el.href = `https://wa.me/${siteConfig.contact.whatsapp}`;
+});
+document.querySelectorAll(".phone-text").forEach(el => {
+    el.textContent = siteConfig.contact.phone;
+});
+document.querySelectorAll(".email-link").forEach(el => {
+    el.href = `mailto:${siteConfig.contact.email}`;
+    el.textContent = siteConfig.contact.email;
+});
+document.querySelectorAll(".developer-link").forEach(el => {
+    el.href = `https://wa.me/${siteConfig.developer.whatsapp}`;
+});
 // وظيفة تتبع التحويلات (Google Analytics/Ads)
 function gtag_report_conversion() {
             gtag('event', 'conversion', {
@@ -22,7 +38,7 @@ function gtag_report_conversion() {
 // }
 
 
-// تأثير الهيدر عند التمرير
+
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
@@ -34,7 +50,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// إضافة تأثير الظهور التدريجي لكروت الشركات
+
 const observerOptions = { threshold: 0.1 };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -168,9 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.classList.add('fa-bars');
         }
     }
-});
-
-if (overlay) {
+    if (overlay) {
     overlay.addEventListener('click', () => {
         navLinks.classList.remove('active');
         overlay.classList.remove('active');
@@ -180,3 +194,41 @@ if (overlay) {
         icon.classList.remove('fa-times');
     });
 }
+});
+
+
+
+const container = document.getElementById('snowflakes');
+
+if (container) {
+    for(let i = 0; i < 20; i++){
+        const el = document.createElement('i');
+        el.className = 'snowflake fas fa-snowflake';
+        el.style.cssText = `
+            left: ${Math.random()*100}%;
+            font-size: ${0.8 + Math.random()*1.5}rem;
+            animation-duration: ${5 + Math.random()*10}s;
+            animation-delay: ${Math.random()*10}s;
+            opacity: ${0.2 + Math.random()*0.4};
+        `;
+        container.appendChild(el);
+    }
+}
+
+    // Scroll reveal
+    const observer1 = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if(e.isIntersecting) e.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer1.observe(el));
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const submenu = this.nextElementSibling;
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        }
+    });
+});

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صيانة الاسكا | Fast Service</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>صيانة التكييفات | Fast Service</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="config.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18092937491"></script>
     <script>
@@ -20,8 +20,8 @@
         gtag('config', siteConfig.analytics.GA4_ID);
     </script>
 </head>
-<body class="company-page alaska-theme">
-   <header>
+<body>
+    <header>
         <!-- <div class="logo"><i class="fas fa-tools"></i> Fast Service</div> -->
          <!-- <a href="index.html"> -->
         <img src="./images/FastService.png" alt="Fast Service Logo" class="logo-img">
@@ -46,53 +46,66 @@
                         <li><a href="deep-freezer.html"><i class="fas fa-icicles"></i> قسم صيانة الديب فريزر</a></li>
                     </ul>
                 </li>
-                <li><a class="phone-link" onclick="return gtag_report_conversion();">اتصل بنا</a></li>
+                <li><a href="tel:01507780599" onclick="return gtag_report_conversion();">اتصل بنا</a></li>
             </ul>
         </nav>
     </header>
-
-    <section class="company-hero" data-aos="fade-in">
-        <div class="hero-overlay"></div>
-        <div class="hero-content" data-aos="zoom-in">
-            <img src="./images/alaska.png" alt="Alaska" class="brand-big-logo">
-            <h1>خبراء صيانة <span>الاسكا</span> المعتمدون</h1>
-            <p>متخصصون في صيانة أجهزة التبريد من الاسكا بأعلى كفاءة في مصر.</p>
-        </div>
-    </section>
-
-    <section class="services-info">
-        <div class="container">
-            <h2 class="section-title">ما نقدمه لمستخدمي الاسكا</h2>
-            <div class="info-grid">
-                <div class="info-card" data-aos="fade-up">
-                    <i class="fas fa-ice-cream"></i>
-                    <h3>ديب فريزر الاسكا</h3>
-                    <p>صيانة الديب فريزر الرأسي والأفقي وشحن الفريون الأصلي.</p>
-                </div>
-                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-thermometer-empty"></i>
-                    <h3>ثلاجات الاسكا</h3>
-                    <p>تغيير الثرموستات والموتور بضمان حقيقي يصل لعام كامل.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="why-us">
-        <div class="why-content" data-aos="fade-left">
-            <h2>لماذا تختارنا لصيانة الاسكا</h2>
-            <ul>
-                <li><i class="fas fa-user-check"></i> فنيين معتمدين لأحدث تكنولوجيا الاسكا.</li>
-                <li><i class="fas fa-tachometer-alt"></i> سرعة تلبية الطلب في نفس اليوم.</li>
-                <li><i class="fas fa-shield-alt"></i> قطع غيار أصلية 100% بالضمان.</li>
-            </ul>
-            <a onclick="return gtag_report_conversion();" class="btn btn-call pulse-animation phone-link">اطلب صيانة الاسكا</a>
-        </div>
-    </section>
 
     <div class="fixed-actions">
         <a onclick="return gtag_report_conversion();" class="float-btn phone phone-link"><i class="fas fa-phone-alt"></i></a>
         <a onclick="return gtag_report_conversion();" class="float-btn wa whatsapp-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
+
+    <section class="hero ac-hero">
+        <div class="snowflakes" id="snowflakes"></div>
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-wind"></i> قسم صيانة التكييفات</div>
+            <h1>تكييفك مش بيسقع؟<br><span>نرجعهولك</span> جديد في ساعة!</h1>
+            <p>نقدم خدمات شحن الفريون، تنظيف الوحدات، وإصلاح أعطال الكومبريسور<br>لجميع أنواع التكييفات (سبليت - مركزي) بضمان معتمد.</p>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">+10</span><span class="stat-label">سنوات خبرة</span></div>
+                <div class="stat"><span class="stat-num">1</span><span class="stat-label">ساعة وصول</span></div>
+                <div class="stat"><span class="stat-num">100%</span><span class="stat-label">فريون أصلي</span></div>
+            </div>
+            <div class="hero-btns">
+                <a onclick="return gtag_report_conversion();" class="btn btn-primary phone-link"><i class="fas fa-phone-alt"></i> اتصل الان</a>
+                <a onclick="return gtag_report_conversion();" class="btn btn-whatsapp whatsapp-link" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="features-strip">
+        <div class="feature-item"><i class="fas fa-wind"></i> شحن فريون أصلي</div>
+        <div class="feature-item"><i class="fas fa-broom"></i> تنظيف كيميائي شامل</div>
+        <div class="feature-item"><i class="fas fa-clock"></i> خدمة طوارئ</div>
+        <div class="feature-item"><i class="fas fa-tools"></i> صيانة دورية</div>
+    </div>
+
+    <section class="problems-section">
+        <div class="reveal">
+            <div class="section-title">أعطال نصلحها في <span>تكييفك</span></div>
+            <div class="title-line"></div>
+        </div>
+        <div class="problems-grid">
+            <div class="problem-card reveal"><div class="problem-icon"><i class="fas fa-temperature-high"></i></div><h3>ضعف التبريد</h3><p>شحن فريون أمريكي وهندي أصلي وتنظيف الفلاتر المسدودة.</p></div>
+            <div class="problem-card reveal"><div class="problem-icon"><i class="fas fa-droplet"></i></div><h3>تسريب مياه</h3><p>تسليك حوض الصرف ومعالجة مشاكل التنقيط من الوحدة الداخلية.</p></div>
+            <div class="problem-card reveal"><div class="problem-icon"><i class="fas fa-bolt"></i></div><h3>عطل الكومبريسور</h3><p>تغيير الكابستور أو الموتور بقطع غيار أصلية بضمان حقيقي.</p></div>
+        </div>
+    </section>
+
+    <section class="steps-section">
+        <div class="reveal">
+            <div class="section-title" style="color:white">خطوات <span>الصيانة</span></div>
+            <div class="title-line"></div>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card reveal"><h3>01</h3><div class="step-icon"><i class="fas fa-headset"></i></div><p>استقبال الطلب</p></div>
+            <div class="step-card reveal"><h3>02</h3><div class="step-icon"><i class="fas fa-truck-moving"></i></div><p>وصول الفني</p></div>
+            <div class="step-card reveal"><h3>03</h3><div class="step-icon"><i class="fas fa-wrench"></i></div><p>الإصلاح الفوري</p></div>
+            <div class="step-card reveal"><h3>04</h3><div class="step-icon"><i class="fas fa-award"></i></div><p>تسليم الضمان</p></div>
+        </div>
+    </section>
+
     <footer class="main-footer">
     <div class="footer-container">
         <!-- قسم عن الشركة -->
@@ -143,9 +156,6 @@
         </div>
     </div>
     </footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000 });</script>
     <script src="script.js"></script>
 </body>
-
 </html>

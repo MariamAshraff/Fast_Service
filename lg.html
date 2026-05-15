@@ -8,25 +8,46 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="config.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18092937491"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
 
         gtag('js', new Date());
-        gtag('config', 'AW-18092937491');
-        gtag('config', 'G-NDR5MHCCXX');
+        // gtag('config', 'AW-18092937491');
+        // gtag('config', 'G-NDR5MHCCXX');
+        gtag('config', siteConfig.analytics.ADS_ID);
+        gtag('config', siteConfig.analytics.GA4_ID);
     </script>
 </head>
 <body class="company-page lg-theme">
-    <header>
+     <header>
+        <!-- <div class="logo"><i class="fas fa-tools"></i> Fast Service</div> -->
+         <!-- <a href="index.html"> -->
         <img src="./images/FastService.png" alt="Fast Service Logo" class="logo-img">
+    <!-- </a> -->
         <nav>
-            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="index.html#companies">الشركات</a></li>
-                <li><a href="tel:01507780599" onclick="return gtag_report_conversion();">اتصل بنا</a></li>
+                <li><a href="index.html#companies">شركات الصيانة</a></li>
+                <!-- <li><a href="#">خدماتنا</a></li> -->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle">
+                        خدمات الصيانة <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="refrigerators.html"><i class="fas fa-snowflake"></i> قسم صيانة الثلاجات</a></li>
+                        <li><a href="air-conditioners.html"><i class="fas fa-wind"></i> قسم صيانة التكييفات</a></li>
+                        <li><a href="microwave.html"><i class="fas fa-microchip"></i> قسم صيانة الميكروويف</a></li>
+                        <li><a href="washers.html"><i class="fas fa-tshirt"></i> قسم صيانة الغسالات</a></li>
+                        <li><a href="deep-freezer.html"><i class="fas fa-icicles"></i> قسم صيانة الديب فريزر</a></li>
+                    </ul>
+                </li>
+                <li><a class="phone-link" onclick="return gtag_report_conversion();">اتصل بنا</a></li>
             </ul>
         </nav>
     </header>
@@ -75,38 +96,29 @@
                 <li><i class="fas fa-tachometer-alt"></i> سرعة تلبية الطلب في نفس اليوم.</li>
                 <li><i class="fas fa-shield-alt"></i> قطع غيار أصلية 100% بالضمان.</li>
             </ul>
-            <a href="tel:01507780599" onclick="return gtag_report_conversion();" class="btn btn-call pulse-animation">اطلب صيانة LG</a>
+            <a class="btn btn-call pulse-animation phone-link" onclick="return gtag_report_conversion();">اطلب صيانة LG</a>
         </div>
     </section>
     <div class="fixed-actions">
-        <a href="tel:01507780599" onclick="return gtag_report_conversion();" class="float-btn phone"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://wa.me/201507780599" onclick="return gtag_report_conversion();" class="float-btn wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a onclick="return gtag_report_conversion();" class="float-btn phone phone-link"><i class="fas fa-phone-alt"></i></a>
+        <a onclick="return gtag_report_conversion();" class="float-btn wa whatsapp-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
-    <script src="script.js"></script>
-</body>
-<footer class="main-footer">
+    <footer class="main-footer">
     <div class="footer-container">
         <!-- قسم عن الشركة -->
         <div class="footer-column about">
             <img src="./images/FastService.png" alt="Fast Service" class="footer-logo">
             <p>نحن الرائدون في صيانة الأجهزة المنزلية بمصر. خبرة تمتد لسنوات، فريق عمل متخصص، وقطع غيار أصلية لضمان راحة بالك.</p>
-            <!-- <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div> -->
+            
         </div>
 
         <!-- روابط سريعة -->
         <div class="footer-column links">
             <h3>روابط سريعة</h3>
             <ul>
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#companies">شركاء النجاح</a></li>
-                <li><a href="#">خدماتنا</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="index.html#companies">شركاء النجاح</a></li>
+                <li><a href="index.html">خدماتنا</a></li>
             </ul>
         </div>
 
@@ -114,8 +126,16 @@
         <div class="footer-column contact">
             <h3>تواصل معنا</h3>
             <p><i class="fas fa-map-marker-alt"></i> خدمة تغطي جميع محافظات مصر</p>
-            <p><i class="fas fa-phone-alt"></i> 01507780599</p>
-            <p><i class="fas fa-envelope"></i> support@fastservice.com</p>
+            <p><i class="fas fa-phone-alt"></i> <a class="phone-link" onclick="return gtag_report_conversion();">اتصل الان</a></p>
+            <p>
+                <i class="fab fa-whatsapp"></i>
+                <a onclick="return gtag_report_conversion();"
+                    target="_blank"
+                    class="whatsapp-link">
+                واتساب
+                </a>
+            </p>
+            <!-- <p><i class="fas fa-envelope"></i> support@fastservice.com</p> -->
         </div>
     </div>
 
@@ -124,9 +144,18 @@
         <div class="bottom-content">
             <p>&copy; 2026 Fast Service. جميع الحقوق محفوظة.</p>
             <p class="dev-credit">
-                تم التطوير بالتعاون مع المهندسة <span class="engineer-name">مريم أشرف</span> <i class="fas fa-code"></i>
-            </p>
+    تم التطوير بالتعاون مع 
+    <a href="https://wa.me/201092695799" target="_blank" class="engineer-name">
+        المهندسة مريم أشرف
+    </a>
+    <i class="fas fa-code"></i>
+</p>
         </div>
     </div>
-</footer>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script src="script.js"></script>
+</body>
+
 </html>
